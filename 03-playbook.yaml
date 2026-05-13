@@ -1,14 +1,14 @@
-- name: install and run nginx
-  hosts: web
-  become: yes
-  tasks:
-  - name: install nginx
-    ansible.builtin.package:
-      name: nginx
-      state: present
+- name: install and run nginx #Play started with - and its name is install and run nginx
+  hosts: web  #running this ansible play for web host which ip configured at inventory.ini
+  become: yes  #to unable the root access for the web host server to run tasks configure become as Yes means enabling root access
+  tasks:   #tasks contains the list of operations to execute
+  - name: install nginx    #task name is install nginx
+    ansible.builtin.package: #nginx installation can be done using ansible.builtin.package module or collection.
+      name: nginx          #for the module to specify which software to install here we gave nginx so it will install nqinx at web host server
+      state: present       #state present means install.
 
-  - name: start nginx
-    ansible.builtin.service:
-      name: nginx
-      state: started
-      enabled: yes
+  - name: start nginx    # one more task name is start nginx mwans start the nginx service.
+    ansible.builtin.service: #services can be started or stopped using the ansible.builtin.service module or collection.
+      name: nginx             #give the name of the service needed to be started. Here we gave nginx service which needs to be started
+      state: started      #starte started means after installation we starting nginx service by enabling it.
+      enabled: yes        #enable the nginx service
