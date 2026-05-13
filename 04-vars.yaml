@@ -1,13 +1,13 @@
-- name: play level variables #starting the play with hyphen then its nsame is play level variables
-  hosts: local         #Here host mentioned as local means its running on local host
-  connection: local    #Connection local means we do not need to provide username and password to connect to host servers which are local servers
-  vars:       #creating variables for ansible
-    COURSE: "DevOps with AWS" #course variable created by assigning the value as Key:value pair
+- name: play level variables
+  hosts: local
+  connection: local
+  vars:
+    COURSE: "DevOps with AWS"
     DURATION: "140HRS"
     TRAINER: "Sivakumar Reddy"
-  tasks:                      #Tasks are created to run the list of operation for the playbook
-  - name: print variables       #name of the play.
-    ansible.builtin.debug:       #we use ansible.builtin.debug module to print data using msg,  etc..                                
-      msg: "Course is: {{ COURSE }}, Trainer is: {{ TRAINER }}   
+  tasks:
+  - name: print variables
+    ansible.builtin.debug:
+      msg: "Course is: {{ COURSE }}, Trainer is: {{ TRAINER }}"
 
                          
