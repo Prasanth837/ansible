@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    COURSE: "DevOps with AWS"
+    COURSE: "DevOps with AWS"  #Play level variable declatation
     DURATION: "140HRS"
     TRAINER: "Sivakumar Reddy"
   tasks:
