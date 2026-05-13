@@ -2,10 +2,8 @@
   hosts: local
   connection: local
   vars_files:
-  - course.yaml
+  - course.yaml   #This imports variables from an external YAML file named course.yaml.
   tasks:
   - name: print variables
-    vars:
-      COURSE: Ansible
     ansible.builtin.debug:
-      msg: "Course is: {{ COURSE }}, Trainer is: {{ TRAINER }}"
+      msg: "Course is: {{ COURSE }}, Trainer is: {{ TRAINER }}" # variables will be printed from external course.yaml file.
