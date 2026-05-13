@@ -1,11 +1,10 @@
-- name: Hello World
-  #hosts: web
-  hosts: local
-  connection: local
-  tasks:
-  - name: print hello World
-    ansible.builtin.debug:
-      msg: "Hello World!"
+- name: Hello World #- indicates a new play in the playbook, name: gives a readable name to the play
+  hosts: local   #Defines on which hosts this play should run, local is the inventory group or host
+  connection: local #Tells Ansible to run locally on the same machine
+  tasks: # tasks contains the list of operations to execute
+  - name: print hello World # A task starts with - and Task name is for readability
+    ansible.builtin.debug: #we use this ansible.builtin.debug module to Print messages, Print variable values, Useful for troubleshooting
+      msg: "Hello World!" #msg means message, Ansible prints this during execution
 
 - name: PLAY-2
   hosts: local
@@ -13,4 +12,10 @@
   tasks:
   - name: play-2 and task-1
     ansible.builtin.debug:
-      msg: "Hello from PLAY-2 and TASK-1"
+      msg: "Hello from PLAY-2 and TASK-1" #If you see there are 6 spaces before msg which is the format while writing sub lists modules.
+
+#In YAML, a list (also called an array or sequence) is written using a hyphen (-)
+
+#Whenever a list started then give space after hyphen then start writing the list as per above example. It's employee details like name of the employee.
+
+#For the above example yaml playbook. If you see there is sub list for tasks which started with two spaces then hyphen (-) then space name of the play.

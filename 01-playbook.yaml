@@ -1,5 +1,5 @@
-- name: ping the server
-  hosts: web
+- name: ping the server #name is just a name given to play
+  hosts: web #Host details will be mentioned in inventory.ini file. Here we mentioned host as web so the ip.address which mentioned for web at host will be pinged.
   tasks:
   - name: ping the web server
-    ansible.builtin.ping:
+    ansible.builtin.ping: #ansible.builin.ping is ansible module which we use to ping the server as per the host information provided.
