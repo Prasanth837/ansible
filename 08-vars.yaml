@@ -4,4 +4,4 @@
   tasks:
   - name: print variables
     ansible.builtin.debug:
-      msg: "Course is: {{ COURSE }}"
+      msg: "Course is: {{ COURSE }}" #The variable is expected to come from the inventory file. Inventory variables are usually defined inside the inventory file.

@@ -1,14 +1,14 @@
 - name: print username and password
   hosts: local
   connection: local
-  vars_prompt:
+  vars_prompt:       #vars_prompt is used to ask the user for input during playbook execution. It works similarly to the read command in shell scripting.
   - name: username
     prompt: Please enter your username
-    private: false
+    private: false   #Input is visible while typing
 
   - name: password
     prompt: please enter your password
-    private: true
+    private: true  #Input won't be visible while typing
   
   tasks:
   - name: print info
