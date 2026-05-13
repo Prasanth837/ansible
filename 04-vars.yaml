@@ -7,11 +7,7 @@
     TRAINER: "Sivakumar Reddy"
   tasks:                      #Tasks are created to run the list of operation for the playbook
   - name: print variables       #name of the play.
-    ansible.builtin.debug:       #we use ansible.builtin.debug module to print data using msg,  etc..
-                                 # msg: → Argument for the debug module to print a message.
-                          #{{ COURSE }} → Value of the variable COURSE
-                          #{{ TRAINER }} → Value of the variable TRAINER
-                          #{{ }} is called Jinja2 templating syntax in Ansible.              
+    ansible.builtin.debug:       #we use ansible.builtin.debug module to print data using msg,  etc..                                
       msg: "Course is: {{ COURSE }}, Trainer is: {{ TRAINER }}   
 
                          
