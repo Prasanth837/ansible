@@ -3,7 +3,7 @@
   connection: local
   vars:
     PROGRAM: "DevSecOps with AWS" # string
-    DURATION: 140 # int/number
+    DURATION: 140 # 
     IS_LIVE: true # bool
     DETAILS: # map/dictionary {}
       MONTHS: 4
@@ -20,4 +20,4 @@
         Duration: {{ DURATION }}
         Is Live?: {{ IS_LIVE }}
         Details: {{ DETAILS }}
-        Topics: {{ TOPICS }}
+        Topics: {{ TOPICS }}4
