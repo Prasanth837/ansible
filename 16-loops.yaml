@@ -4,8 +4,9 @@
   tasks:
   - name: print names
     ansible.builtin.debug:
-      msg: "Hello {{ item }}" # item is reserved keyword
+      msg: "Hello {{ item }}" # item is reserved keyword which works like index of loop and prints the items in loop until loop ends.
     loop:
     - Ramesh
     - Raheem
     - John
+    #Here loop has ramesh raheem john these are listed like items in loop and prints one by one when the loop executes.

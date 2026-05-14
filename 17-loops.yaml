@@ -6,8 +6,9 @@
   - name: install package
     ansible.builtin.package:
       name: "{{ item }}"
-      state: present
+      state: present #The state present means install, state absent means remove, state latest means update it to latest version.
     loop:
     - mysql
     - nginx
     - zip
+    #Here Installing these 3 servers using ansible.builtin.package and loop starts with mysql as it will be starting index for item.
