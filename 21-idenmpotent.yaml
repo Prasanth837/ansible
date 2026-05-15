@@ -7,6 +7,11 @@
     ansible.builtin.user:            #ansible builting user module to manage user specific things.
       name: johnd                     #creatting the user john without using useradd john like ansible.builtin.command module
 
+- name: user validation
+  become: yes
+  hosts: local
+  connection: local
+  tasks:
   - name: check userid
     ansible.builtin.command: id johnd
     register: users_output
