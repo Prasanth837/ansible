@@ -4,13 +4,13 @@
   #become: yes
   tasks:
   - name: check user exist or not
-    ansible.builtin.command: id roboshop
-    register: user_ouput
-    #ignore_errors: true
+    ansible.builtin.command: id roboshop  #With help of linux id command we are checking whether roboshop user present or not
+    register: user_ouput                  #saving the output we got for id roboshop to user_output variable with help of register
+    ignore_errors: true
 
   - name: print the output
     ansible.builtin.debug:
-      msg: "{{ user_ouput }}"
+      msg: "{{ user_ouput }}"         #printing the user output
 
  # - name: create user
   #  ansible.builtin.command: useradd roboshop
