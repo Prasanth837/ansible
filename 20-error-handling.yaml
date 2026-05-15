@@ -1,7 +1,7 @@
 - name: demo on error handling
   hosts: local
   connection: local
-  #become: yes
+  become: yes                             #If the user not present we need to create new user using root. so giving root permissions using become:yes
   tasks:
   - name: check user exist or not
     ansible.builtin.command: id roboshop  #With help of linux id command we are checking whether roboshop user present or not
@@ -12,6 +12,6 @@
     ansible.builtin.debug:
       msg: "{{ user_ouput }}"         #printing the user output
 
- # - name: create user
-  #  ansible.builtin.command: useradd roboshop
-   # when: user_ouput.rc != 0
+  - name: create user                 
+    ansible.builtin.command: useradd roboshop #writing new task to create new user if the user not found.
+    when: user_ouput.rc != 0                #rc=0 means success if rc=1 means failure. So we have to create this task when the roboshop user not present.
