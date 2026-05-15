@@ -9,7 +9,7 @@
 
   - name: check userid
     ansible.builtin.command: id johnd
-    result: users_output
+    register: users_output
 
   - name: print user
     ansible.builtin.debug:
